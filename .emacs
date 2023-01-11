@@ -54,7 +54,7 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 
-(rc/require-theme 'constant)
+(rc/require-theme 'underwater)
 
 (rc/require 'nyan-mode)
 (nyan-mode 1)
