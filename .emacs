@@ -43,7 +43,7 @@
 (defun get-default-font ()
   (cond
    ((eq system-type 'windows-nt) "Fira Code-14")
-   ((eq system-type 'gnu/linux) "Iosevka-24")))
+   ((eq system-type 'gnu/linux) "Iosevka-18")))
 
 (add-to-list 'default-frame-alist `(font . (get-default-font)))
 (set-frame-font (get-default-font))
@@ -148,6 +148,16 @@
 
 (elcord-mode 1)
 
+;;; Magit
+
+(rc/require 'cl-lib)
+(rc/require 'magit)
+
+(setq magit-auto-revert-mode nil)
+
+(global-set-key (kbd "C-c m s") 'magit-status)
+(global-set-key (kbd "C-c m l") 'magit-log)
+
 ;;; Utility
 
 (defun cd/emacs-startup-hook ()
@@ -187,7 +197,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elcord svelte-mode move-text company yasnippet nyan-mode constant-theme multiple-cursors ido-completing-read+ smex dash-functional dash)))
+   '(magit elcord svelte-mode move-text company yasnippet nyan-mode constant-theme multiple-cursors ido-completing-read+ smex dash-functional dash)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
